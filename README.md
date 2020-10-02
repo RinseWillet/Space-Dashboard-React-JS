@@ -6,6 +6,8 @@ to do list:
 
 - update the ISS Map to center on and track the current location of ISS
 - create a radio button to change the base-maps in the Martian weather app
+- streamline the code further (DRY)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
