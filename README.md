@@ -2,6 +2,11 @@ Space Dashboard is a little react app I wrote to teach myself the basics of work
 
 The app uses react-vis to generate a graph of the Martian weather data, while also making use of Leaflet and google-map-react to show the location of the NASA Insight probe on Mars and the location of International Space Station respectively. The styling is very much inspired by my old 8088 XT IBM pc with Hercules Monochrome graphics card.
 
+to do list:
+
+- update the ISS Map to center on and track the current location of ISS
+- create a radio button to change the base-maps in the Martian weather app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
