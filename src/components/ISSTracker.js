@@ -11,10 +11,11 @@ return(
             <div className="iss-container" >
                 <div className="iss-title">
                 <h1>Tracking International Space Station</h1>
-                </div>
-                <div>
+                </div>                               
+                <div>                
                 <ISSMap />
                 </div>
+                
             </div>
             
             </>
