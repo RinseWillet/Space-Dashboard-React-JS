@@ -150,8 +150,9 @@ body {
 
 /* styling ISS tracker */
 
-.iss-container {
+.iss-container {  
   padding: 0 2%;
+  width: 100vw;
 }
 
 .iss-title {
@@ -174,9 +175,23 @@ body {
   margin: 0 0.5%;
 }
 
+.iss-column{  
+  box-sizing: border-box;
+  float: left;
+  padding: 5px;   
+}
+
+.iss-left{
+  width:25%;
+}
+
+.iss-right {
+  width:70%;
+}
+
 .iss-map {
   width: 100%;
-  height: 800px;
+  height: 80vh;
   display: inline-block;
   justify-content: center;
   border: 1px solid #33ff33;
@@ -200,6 +215,13 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
   overflow: hidden;
+}
+
+.iss-cam {
+  border: 1px solid #33ff33;
+  box-shadow: 0 0 3px #33ff33;  
+  width: 100%;
+  height:28vh;  
 }
 
 /* styling Mars Weather components */

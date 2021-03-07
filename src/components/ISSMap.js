@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import ISSCam from "./ISSCam";
 
 //import custom map styles from JSON file
 const mapStyle = require('./MapStyle.json')
@@ -32,7 +33,7 @@ export default class ISSMap extends React.Component {
             lng: 0
         },
 
-        zoom: 2
+        zoom: 1
     }
 
     componentDidMount() {
@@ -72,8 +73,7 @@ export default class ISSMap extends React.Component {
             )
     }
 
-    render() {
-        
+    render() {        
         var latISS = this.state.centerISS.lat;
         var lngISS = this.state.centerISS.lng;        
         var latUser= this.state.centerUser.lat;
@@ -89,8 +89,14 @@ export default class ISSMap extends React.Component {
                                 <p>Latitude: {latISS}</p>
                                 <p>Longitude: {lngISS}</p>
                             </div>
+                            <div>
+                            <div className="iss-column iss-left">
+                            <ISSCam/>
+                            
+                            </div>
+                            <div className="iss-column iss-right">
                             <div className="iss-map">
-                                <GoogleMapReact className="iss-map"
+                                <GoogleMapReact
                                     ref={(ref) => { this.map = ref; }}
                                     options={{ styles: mapStyle }}
                                     bootstrapURLKeys={{ key: MAP_KEY }}
@@ -113,6 +119,8 @@ export default class ISSMap extends React.Component {
                                     />
 
                                 </GoogleMapReact>
+                            </div>
+                            </div>
                             </div>
                         </div>
                 }
