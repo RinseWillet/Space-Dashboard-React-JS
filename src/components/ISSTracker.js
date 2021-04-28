@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import NavBar from "./NavBar";
 import ISSMap from "./ISSMap";
 
@@ -7,7 +7,6 @@ export default function ISSTracker() {
 return(
 <>
             <NavBar />
-
             <div className="iss-container" >
                 <div className="iss-title">
                 <h1>Tracking International Space Station</h1>
