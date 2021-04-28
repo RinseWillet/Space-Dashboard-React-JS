@@ -1,0 +1,8 @@
+// make Mars-weather responsive
+//fonts, position maps, graph size responsive
+// make ISS tracker responsive
+//NASA POD - is responsive, but fonts need to be scalable as well/responsive
+
+// add Crew in Space API for ISS tracker
+// add altitude, velocity data for ISS tracker (seperate ESA API?)
+// auto-run live stream ISS tracker

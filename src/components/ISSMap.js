@@ -2,11 +2,12 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import ISSCam from "./ISSCam";
 
+
 //import custom map styles from JSON file
 const mapStyle = require('./MapStyle.json')
 
 //API for the ISS position
-const ISS_URL = "http://api.open-notify.org/iss-now.json"
+const ISS_URL = "https://api.wheretheiss.at/v1/satellites/25544"
 
 //Key for google maps api (in .env file)
 const MAP_KEY = process.env.REACT_APP_GOOGLE
@@ -33,6 +34,9 @@ export default class ISSMap extends React.Component {
             lng: 0
         },
 
+        ISSalt: 0,
+        ISSvel: 0,
+        visibility: "",
         zoom: 1
     }
 
@@ -65,19 +69,26 @@ export default class ISSMap extends React.Component {
             .then(res => res.json())
             .then(data => this.setState({
                 centerISS: {
-                    lat: data.iss_position.latitude,
-                    lng: data.iss_position.longitude
-                }
+                    lat: data.latitude,
+                    lng: data.longitude
+                },
+                ISSvel: data.velocity,
+                ISSalt: data.altitude,
+                visibility: data.visibility                
             }),
-            error => console.log(error)
+            error => console.log(error)            
             )
+            
     }
 
     render() {        
-        var latISS = this.state.centerISS.lat;
-        var lngISS = this.state.centerISS.lng;        
+        var latISS = Math.round((this.state.centerISS.lat + Number.EPSILON) * 100) / 100;
+        var lngISS = Math.round((this.state.centerISS.lng + Number.EPSILON) * 100) / 100;
+        var altidudeISS = Math.round((this.state.ISSalt + Number.EPSILON) * 100) / 100;           
+        var velocityISS = Math.round((this.state.ISSvel + Number.EPSILON) * 100) / 100;          
         var latUser= this.state.centerUser.lat;
-        var lngUser= this.state.centerUser.lng;     
+        var lngUser= this.state.centerUser.lng;
+
         return (
             <div>
                 {
@@ -86,13 +97,12 @@ export default class ISSMap extends React.Component {
                         :
                         <div>
                             <div className="iss-text">
-                                <p>Latitude: {latISS}</p>
-                                <p>Longitude: {lngISS}</p>
+                                <p>lat: {latISS} - lng: {lngISS} - alt: {altidudeISS} km - vel: {velocityISS} km/h</p>
+                                <p>visibility: {this.state.visibility}</p>
                             </div>
-                            <div>
+                            <div className="iss-field">
                             <div className="iss-column iss-left">
-                            <ISSCam/>
-                            
+                            <ISSCam/>                            
                             </div>
                             <div className="iss-column iss-right">
                             <div className="iss-map">
@@ -106,8 +116,8 @@ export default class ISSMap extends React.Component {
                                 >
 
                                     <SpaceStation
-                                        lat={latISS}
-                                        lng={lngISS}
+                                        lat={this.state.centerISS.lat}
+                                        lng={this.state.centerISS.lng}
                                         img={img}
                                         text={"ISS"}
                                     />
@@ -117,7 +127,6 @@ export default class ISSMap extends React.Component {
                                     lng={lngUser}                                    
                                     text={"user"}
                                     />
-
                                 </GoogleMapReact>
                             </div>
                             </div>
@@ -128,4 +137,3 @@ export default class ISSMap extends React.Component {
         )
     }
 }
-
