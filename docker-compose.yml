@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+    swag:
+        image: ghcr.io/linuxserver/swag
+        container_name: swag
+        cap_add:
+            - NET_ADMIN
+        environment:
+            - PUID=1000 
+            - PGID=1000 
+            - TZ=Europe/Amsterdam
+            - URL=spacedashboard.top
+            - SUBDOMAINS=www,
+            - VALIDATION=dns
+            - DNSPLUGIN=cloudflare
+        volumes:
+            - ./container:/config
+        ports:
+            - 443:443 # https
+            - 80:80 # http
+        restart: unless-stopped
