@@ -13,8 +13,6 @@ heigth: $(props => props.height);
 
 export default class LeafletMap extends React.Component {
 
-    
-
     componentDidMount() {        
         this.map = L.map('map', {
             center: position,
