@@ -276,8 +276,8 @@ body {
 
 .iss-text {
   padding: 0% 0.1%;
-  width: 100%;  
-  text-align: center;  
+  width: 100%;
+  text-align: center;
   background: #282828;
   font-size: 12px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -321,21 +321,21 @@ body {
 @media (max-width: 768px) {
   .iss-field {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
   }
 
-  .iss-left {    
+  .iss-left {
     width: 100%;
     height: 40%;
   }
 
-  .iss-right {    
+  .iss-right {
     width: 100%;
     height: 40%;
   }
 
-  .iss-map{
-    height:50vh;
+  .iss-map {
+    height: 50vh;
   }
 
   .iss-title > h1 {
@@ -350,22 +350,22 @@ body {
 /* Mobile phone M */
 
 @media (max-width: 375px) {
-  .iss-left {    
+  .iss-left {
     width: 100%;
     height: 30%;
   }
 
-  .iss-right {    
+  .iss-right {
     width: 100%;
     height: 30%;
   }
 
-  .iss-cam{
+  .iss-cam {
     height: 30vh;
   }
 
-  .iss-map{
-    height:40vh;
+  .iss-map {
+    height: 40vh;
   }
 
   .iss-title > h1 {
@@ -375,11 +375,9 @@ body {
   .iss-text {
     font-size: 8px;
   }
-
 }
 
 /* styling Mars Weather components */
-
 
 /* Styling the table elements */
 
@@ -425,17 +423,17 @@ body {
 .nasa-weather-text {
   padding: 0.2% 0.2%;
   margin: 0 0.5% 0 0;
-  width: 100%;  
-  text-align: left;
+  width: 100%;
+  text-align: center;
   justify-content: center;
-  background: #282828;  
+  background: #282828;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   letter-spacing: 3px;
   text-transform: uppercase;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .nasa-weather-text > h2 {
@@ -451,8 +449,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
-
 
 /* styling radio buttons */
 
@@ -478,25 +474,33 @@ body {
 
 /* Styling the graph and map element */
 
-.nasa-weather-graph {
+.nasa-weather-graph-map {
   padding: 0.5% 5%;
   display: flex;
   flex-direction: row;
 }
 
-.nasa-weather-box {
+.nasa-weather-box-map {
   border: 1px solid #33ff33;
   box-shadow: 0 0 3px #33ff33;
-  margin: 0 0 0 0.5%;
+  margin: 0 0.5% 0 0;
   width: 50%;
-  height: 384px;
+  height: 400px;
 }
 
-.graph {  
-  padding: 0 0.5%;  
+.nasa-weather-graph {
+  width: 50%;
+  margin: 0 0 0 0.5%;
+  align-content: center;
+  height: 400px;
+}
+
+.graph {
   stroke-width: 0.5px;
   stroke: #33ff33;
   text-shadow: 0 0 1px #33ff33;
+  width: 100%;
+  height: 90%;
 }
 
 /* Mars Weather responsive maken */
@@ -504,56 +508,106 @@ body {
 /* Small laptop */
 
 @media (max-width: 1024px) {
-.nasa-weather-table{
-  padding: 0.5% 2%;
-  font-size: 8px;
-  } 
+  .nasa-weather-table {
+    padding: 0.5% 2%;
+    font-size: 8px;
+  }
 
-  .table-header {    
-    font-size: 10px;    
+  .table-header {
+    font-size: 10px;
     text-shadow: 0 0 2px #33ff33;
     letter-spacing: 2px;
   }
   .nasa-weather-text > h2 {
     font-size: 12px;
   }
-  
+
   .nasa-weather-text > p {
     font-size: 10px;
   }
-  
-  .nasa-weather-description{
-    display:flex;
+
+  .nasa-weather-description {
+    display: flex;
     flex: column;
   }
 
-  .nasa-weather-graph{
+  .nasa-weather-graph-map {
     padding: 0.5% 2%;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .nasa-weather-box {
-    border: 1px solid #33ff33;
-    box-shadow: 0 0 3px #33ff33;
-    margin: 0 0 0 0.5%;
-    width: 50%;
-    height: 350px;
+  .nasa-weather-box-map {
+    width: 100%;
+    height: 300px;
   }
 
-
+  .nasa-weather-graph {
+    width: 100%;
+  }
 }
-
-
-
 
 /* Tablet */
 
 @media (max-width: 768px) {
+  .nasa-weather-box-map {
+    height: 25vh;
+  }
 
+  .table-border{
+    padding: 5px;
+  }
+
+  .nasa-weather-graph {
+    height: 25vh;
+  }
 }
 
 /* Mobile phone M */
 
 @media (max-width: 375px) {
+  .nasa-weather-table {
+    padding: 0.5% 2%;
+    font-size: 8px;
+  }
 
+  .table-header {
+    font-size: 9px;
+    text-shadow: 0 0 2px #33ff33;
+    letter-spacing: 1px;
+  }
+
+  .nasa-weather-text{
+    text-align:justify;
+  }
+  .nasa-weather-text > h2 {
+    font-size: 10px;
+  }
+
+  .nasa-weather-text > p {
+    font-size: 8px;
+  }
+
+  .nasa-weather-description {
+    display: flex;
+    flex: column;
+  }
+
+  .nasa-weather-graph-map {
+    padding: 0.5% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nasa-weather-box-map {
+    height: 20vh;
+  }
+
+  .nasa-weather-graph {
+    height: 20vh;
+  }
 }
+
+
