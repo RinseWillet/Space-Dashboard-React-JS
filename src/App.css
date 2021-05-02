@@ -67,8 +67,12 @@ body {
   margin-bottom: 30px;
 }
 
-.nasa-photo .explanation {  
+.nasa-photo .explanation {
 }
+
+/* NASA Daily photo responsive */
+
+/* Small laptop */
 
 @media (max-width: 1024px) {
   .nasa-photo {
@@ -82,6 +86,8 @@ body {
   }
 }
 
+/* Mobile phone M */
+
 @media (max-width: 375px) {
   .nasa-photo {
     display: block;
@@ -89,7 +95,7 @@ body {
     padding: 20px;
   }
 
-  .nasa-photo h1{
+  .nasa-photo h1 {
     font-size: 13px;
   }
 
@@ -99,7 +105,7 @@ body {
     margin-bottom: 5px;
   }
 
-  .nasa-photo .date{
+  .nasa-photo .date {
     margin-bottom: 5px;
   }
 }
@@ -170,48 +176,52 @@ body {
   padding: 20px;
 }
 
+/* Home Screen Responsive */
+
+/* Small Laptop */
+
 @media (max-width: 1024px) {
-  .home{
-   height: 100%;   
+  .home {
   }
-  .home-link{
+  .home-link {
     font-size: 32px;
     padding: 20px 40px;
-  }  
+  }
 }
 
+/* Tablet */
+
 @media (max-width: 768px) {
-  .home{
-   height: 100%;   
+  .home {
   }
-  .home-link{
+  .home-link {
+    text-align: center;
     padding: 15px 15px;
     font-size: 25px;
   }
 }
 
+/* Mobile phone M */
+
 @media (max-width: 375px) {
-  .home{
-   height: 100%;   
+  .home {
   }
-  .home-link{
-    padding: 10px 0;
+  .home-link {
+    text-align: center;
+    padding: 10px 5px;
     font-size: 18px;
   }
-  
 }
 
+/* Styling ISS tracker */
 
-/* styling ISS tracker */
-
-.iss-container {  
+.iss-container {
   max-height: 100%;
-  max-width: 100%;   
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 2%;
   justify-content: center;
   align-items: center;
-  
 }
 
 .iss-title {
@@ -234,29 +244,29 @@ body {
   margin: 0 0.5%;
 }
 
-.iss-field{
+.iss-field {
   max-width: 100%;
 }
 
-.iss-column{  
-  box-sizing: border-box;  
-  padding: 5px;   
+.iss-column {
+  box-sizing: border-box;
+  padding: 5px;
 }
 
-.iss-left{
+.iss-left {
   float: left;
-  width:30%;
+  width: 30%;
   height: 40%;
 }
 
 .iss-right {
   float: right;
-  width:70%;
+  width: 70%;
 }
 
 .iss-map {
   width: 100%;
-  height: 80vh;  
+  height: 80vh;
   justify-content: center;
   border: 1px solid #33ff33;
   box-shadow: 0 0 3px #33ff33;
@@ -266,10 +276,8 @@ body {
 
 .iss-text {
   padding: 0% 0.1%;
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  justify-content: center;
+  width: 100%;  
+  text-align: center;  
   background: #282828;
   font-size: 12px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -283,17 +291,21 @@ body {
 
 .iss-cam {
   border: 1px solid #33ff33;
-  box-shadow: 0 0 3px #33ff33;  
+  box-shadow: 0 0 3px #33ff33;
   width: 100%;
-  height:38vh;  
+  height: 38vh;
 }
 
+/* ISS Tracker responsive */
+
+/* Small laptop */
+
 @media (max-width: 1024px) {
-  .iss-field {
-    display: block;
+  .iss-title > h1 {
+    font-size: 16px;
   }
 
-  .iss-title {
+  .iss-text {
     font-size: 12px;
   }
 
@@ -304,7 +316,67 @@ body {
   }
 }
 
+/* Tablet */
 
+@media (max-width: 768px) {
+  .iss-field {
+    display: flex;
+    flex-direction: column;    
+  }
+
+  .iss-left {    
+    width: 100%;
+    height: 40%;
+  }
+
+  .iss-right {    
+    width: 100%;
+    height: 40%;
+  }
+
+  .iss-map{
+    height:50vh;
+  }
+
+  .iss-title > h1 {
+    font-size: 14px;
+  }
+
+  .iss-text {
+    font-size: 10px;
+  }
+}
+
+/* Mobile phone M */
+
+@media (max-width: 375px) {
+  .iss-left {    
+    width: 100%;
+    height: 30%;
+  }
+
+  .iss-right {    
+    width: 100%;
+    height: 30%;
+  }
+
+  .iss-cam{
+    height: 30vh;
+  }
+
+  .iss-map{
+    height:40vh;
+  }
+
+  .iss-title > h1 {
+    font-size: 11px;
+  }
+
+  .iss-text {
+    font-size: 8px;
+  }
+
+}
 
 /* styling Mars Weather components */
 
