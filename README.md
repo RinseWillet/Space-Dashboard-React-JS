@@ -4,7 +4,7 @@ The app uses react-vis to generate a graph of the Martian weather data, while al
 
 to do list:
 
-- update the ISS Map to center on and track the current location of ISS
+- (done)update the ISS Map to center on and track the current location of ISS
 - create a radio button to change the base-maps in the Martian weather app
 - streamline the code further (DRY)
 - create animations for drawing the graph, filling the text etc.
