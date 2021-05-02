@@ -70,15 +70,6 @@ export default class Graph extends Component {
 
     return (
       <div className="nasa-weather" onChange={this.onChangeValue}>
-        <div className="graph">
-          <XYPlot height={350} width={1000} yDomain={Domain}>
-            <XAxis tickSizeInner={0} tickSizeOuter={5} tickTotal={8} style={{ line: { strokeWidth: 0.75, stroke: '#33ff33' } }} title="SOL DAYS" position='middle' />
-            <YAxis tickSizeInner={0} tickSizeOuter={5} style={{ line: { strokeWidth: 0.75, stroke: '#33ff33' } }} title={yAxisTitle} position='middle' />
-            <LineSeries data={data} color="#33ff33" style={{ strokeWidth: 1 }} />
-            {/* <LineSeries data={GetData(weatherData,"AT" , "mn")} color="#33ff33" style={{ strokeWidth: 0.5 }} strokeDasharray="5, 3"/>
-          <LineSeries data={GetData(weatherData,"AT" , "mx")} color="#33ff33" style={{ strokeWidth: 0.5 }} strokeDasharray="2, 2" /> */}
-          </XYPlot>
-        </div>
         <div className="nasa-weather-radio" onChange={this.onChangeTypeValue}>
           <input type="radio" value="AT" name="optionsType" /> Temperature
           <input type="radio" value="HWS" name="optionsType" /> Windspeed
@@ -89,6 +80,15 @@ export default class Graph extends Component {
           <input type="radio" value="mn" name="optionsUnit" /> Minimum
           <input type="radio" value="mx" name="optionsUnit" /> Maximum
       </div>
+        <div className="graph">
+          <XYPlot height={350} width={1000} yDomain={Domain}>
+            <XAxis tickSizeInner={0} tickSizeOuter={5} tickTotal={8} style={{ line: { strokeWidth: 0.75, stroke: '#33ff33' } }} title="SOL DAYS" position='middle' />
+            <YAxis tickSizeInner={0} tickSizeOuter={5} style={{ line: { strokeWidth: 0.75, stroke: '#33ff33' } }} title={yAxisTitle} position='middle' />
+            <LineSeries data={data} color="#33ff33" style={{ strokeWidth: 1 }} />
+            {/* <LineSeries data={GetData(weatherData,"AT" , "mn")} color="#33ff33" style={{ strokeWidth: 0.5 }} strokeDasharray="5, 3"/>
+          <LineSeries data={GetData(weatherData,"AT" , "mx")} color="#33ff33" style={{ strokeWidth: 0.5 }} strokeDasharray="2, 2" /> */}
+          </XYPlot>
+        </div>        
       </div>
     );
   }
