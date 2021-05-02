@@ -107,15 +107,15 @@ export default function MarsWeather() {
                     of the Martian Year (687 days).<br/>                    
                     The satellite map indicates the current position of the probe. The radiobuttons let you select types of data, which are displayed in the graph below.
                     In the graph the daily temperature, windspeed and atmospheric presure trends can be plotted (average, minimum, maximum values).<br/>
-                    <span style={{fontSize: "8px", whiteSpace: "pre-line"}}>**** InSight has temporarily suspended daily temperature measurements.
+                    <span style={{fontSize: "8px", whiteSpace: "pre-line"}}>* InSight has temporarily suspended daily temperature measurements.
                     As more data becomes available, it will appear. For more information <a href={"https://mars.nasa.gov/news/8858/insight-is-meeting-the-challenge-of-winter-on-dusty-mars/?site=insight"} 
-                    style={{color: "#33ff33"}}>click here</a> ****</span>
+                    style={{color: "#33ff33"}}>click here</a> *</span>
                     </p>
                 </div>
                 
             </div>
-            <div className="nasa-weather-graph">
-            <div className="nasa-weather-box" id='map'>
+            <div className="nasa-weather-graph-map">
+            <div className="nasa-weather-box-map" id='map'>
                     <div>
                         <LeafletMap />
                     </div>
