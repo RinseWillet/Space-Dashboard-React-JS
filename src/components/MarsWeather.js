@@ -98,21 +98,28 @@ export default function MarsWeather() {
                     </tbody>
                 </table>
             </div>
-            <div className="nasa-weather-map">
+            <div className="nasa-weather-description">
                 <div className="nasa-weather-text">
                     <h2>WEATHER REPORT FROM ELYSIUM PLANITIA</h2>
                     <p>The data from NASA's Mars InSight Mission is used here to give an updated report on the weather at Mars.
-                    Elysium Planitia is a flat and smooth plain close to Mars' equator. The table represents the averages in  (degrees Celsius),
+                    Elysium Planitia is a flat and smooth plain close to Mars' equator. <br/> The table represents the averages in  (degrees Celsius),
                     windspeed (meters per second), and atmospheric pressure (Pascal) of the last seven Sol Days (length 24 hrs and 37 min)
-                    of the Martian Year (687 days). The satellite map indicates the current position of the probe. In the graph below the daily temperature, windspeed and atmospheric presure trends can be plotted (average, minimum, maximum values).</p>
+                    of the Martian Year (687 days).<br/>                    
+                    The satellite map indicates the current position of the probe. The radiobuttons let you select types of data, which are displayed in the graph below.
+                    In the graph the daily temperature, windspeed and atmospheric presure trends can be plotted (average, minimum, maximum values).<br/>
+                    <span style={{fontSize: "8px", whiteSpace: "pre-line"}}>**** InSight has temporarily suspended daily temperature measurements.
+                    As more data becomes available, it will appear. For more information <a href={"https://mars.nasa.gov/news/8858/insight-is-meeting-the-challenge-of-winter-on-dusty-mars/?site=insight"} 
+                    style={{color: "#33ff33"}}>click here</a> ****</span>
+                    </p>
                 </div>
-                <div className="nasa-weather-box" id='map'>
+                
+            </div>
+            <div className="nasa-weather-graph">
+            <div className="nasa-weather-box" id='map'>
                     <div>
                         <LeafletMap />
                     </div>
                 </div>
-            </div>
-            <div>
                 <Graph />
             </div>       
         </>

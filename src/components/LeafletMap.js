@@ -16,7 +16,7 @@ export default class LeafletMap extends React.Component {
     componentDidMount() {        
         this.map = L.map('map', {
             center: position,
-            zoom: 1,
+            zoom: 2,
             tms: true,
             zoomControl: false,
             // tileSize: 256,
@@ -25,7 +25,7 @@ export default class LeafletMap extends React.Component {
 
         L.tileLayer( `http://s3-eu-west-1.amazonaws.com/whereonmars.cartodb.net/celestia_mars-shaded-16k_global/{z}/{x}/{y}.png`, { 
             detectRetina: true, maxZoom: 5, maxNativeZoom: 5,
-			zoom: 1,
+			zoom: 2,
 			tms: true,
         }).addTo(this.map).setZIndex(0);        
       
