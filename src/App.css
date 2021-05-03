@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap");
 
 body {
   font-family: "Righteous", cursive;
@@ -37,11 +38,10 @@ body {
 .nasa-photo {
   display: flex;
   padding: 40px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   max-height: 100%;
   font-size: 12px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   text-decoration: none;
@@ -51,10 +51,15 @@ body {
 }
 
 .nasa-photo img {
-  width: 50%;
+  justify-content: left;
+  width: 60vw;
   margin-right: 50px;
   object-fit: contain;
   max-height: 80vh;
+}
+
+.nasa-photo .nasa-photo-text{
+  width: 32vw;
 }
 
 .nasa-photo h1 {
@@ -83,6 +88,10 @@ body {
     width: 100%;
     margin-right: 0;
     margin-bottom: 30px;
+  }
+
+  .nasa-photo .nasa-photo-text{
+    width: 100%;
   }
 }
 
@@ -121,21 +130,22 @@ body {
   background: #282828;
   padding: 40px 80px;
   font-size: 40px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   text-decoration: none;
   letter-spacing: 4px;
   text-transform: uppercase;
   overflow: hidden;
-  transition: 0.2s;
+  transition: 0.2s; 
+  overflow: hidden;  
 }
+
 
 .home-link:hover {
   color: #282828;
   background: #33ff33;
-  box-shadow: 0 0 10px #33ff33, 0 0 40px #33ff33, 0 0 80px #33ff33;
+  box-shadow: 0 0 10px #33ff33, 0 0 40px #33ff33, 0 0 60px #33ff33;
   transition-delay: 0.3s;
 }
 
@@ -146,7 +156,7 @@ body {
   max-width: 500vh;
   max-height: 500vh;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-rows: 5% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
   justify-content: center;
 }
 
@@ -154,22 +164,37 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 2;
-  grid-column-end: 5;
+  grid-column-end: 6;
 }
 
 .button2 {
-  grid-row-start: 3;
-  grid-row-end: 4;
-  grid-column-start: 2;
-  grid-column-end: 5;
-}
-
-.button3 {
   grid-row-start: 4;
   grid-row-end: 5;
   grid-column-start: 2;
   grid-column-end: 5;
 }
+
+.button3 {
+  grid-row-start: 6;
+  grid-row-end: 7;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.button4 {
+  grid-row-start: 8;
+  grid-row-end: 9;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.button5 {
+  grid-row-start: 10;
+  grid-row-end: 11;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
 
 .nasa-container {
   border: 3px solid #fff;
@@ -180,9 +205,7 @@ body {
 
 /* Small Laptop */
 
-@media (max-width: 1024px) {
-  .home {
-  }
+@media (max-width: 1024px) {  
   .home-link {
     font-size: 32px;
     padding: 20px 40px;
@@ -204,8 +227,7 @@ body {
 /* Mobile phone M */
 
 @media (max-width: 375px) {
-  .home {
-  }
+
   .home-link {
     text-align: center;
     padding: 10px 5px;
@@ -228,8 +250,7 @@ body {
   text-align: center;
   justify-content: center;
   font-size: 14px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   letter-spacing: 3px;
@@ -280,8 +301,7 @@ body {
   text-align: center;
   background: #282828;
   font-size: 12px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   letter-spacing: 3px;
@@ -387,8 +407,7 @@ body {
   background: #282828;
   padding: 0.5% 5%;
   font-size: 9px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   text-decoration: none;
@@ -408,8 +427,7 @@ body {
 .table-header {
   background: #282828;
   font-size: 12px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   text-decoration: none;
@@ -424,24 +442,16 @@ body {
   padding: 0.2% 0.2%;
   margin: 0 0.5% 0 0;
   width: 100%;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content: left;
   background: #282828;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #33ff33;
   text-shadow: 0 0 3px #33ff33;
   letter-spacing: 3px;
   text-transform: uppercase;
   overflow: hidden;
-}
-
-.nasa-weather-text > h2 {
-  font-size: 15px;
-}
-
-.nasa-weather-text > p {
-  font-size: 13px;
+  font-size: 13px;  
 }
 
 .nasa-weather-description {
@@ -525,15 +535,7 @@ body {
 
   .nasa-weather-text{
     text-align: justify;
-  }
-
-  .nasa-weather-text > h2 {
-    text-align: center;
-    font-size: 12px;
-  }
-
-  .nasa-weather-text > p {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .nasa-weather-description {
@@ -594,14 +596,8 @@ body {
 
   .nasa-weather-text{
     text-align:justify;
-  }
-  .nasa-weather-text > h2 {
     font-size: 9px;
-  }
-
-  .nasa-weather-text > p {
-    font-size: 7px;
-  }
+  } 
 
   .nasa-weather-description {
     display: flex;
@@ -622,6 +618,21 @@ body {
   .nasa-weather-graph {
     height: 240px;
   }
+}
+
+/* Animation */
+
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0%;}
+  to{width: 100%;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
 }
 
 
