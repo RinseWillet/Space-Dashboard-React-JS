@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Graph from "./Graph";
 import NavBar from "./NavBar";
 import LeafletMap from "./LeafletMap";
+import Typewriter from "typewriter-effect";
 
 //API key NASA and Google Maps from .env file in root
 const apiKey = process.env.REACT_APP_KEY;
@@ -51,7 +52,6 @@ function renderTable(weatherData, index) {
             <td>{atmosphericPressure}</td>
         </tr>
     );
-
 }
 
 export default function MarsWeather() {
@@ -72,6 +72,8 @@ export default function MarsWeather() {
 
     if (!weatherData) return <div />;
     const sol_keys = weatherData.sol_keys;
+
+    var text = '<h2>WEATHER REPORT FROM ELYSIUM PLANITIA</h2><p>The data from NASA\'s Mars InSight Mission is used here to give an updated report on the weather at Mars. Elysium Planitia is a flat and smooth plain close to Mars\' equator. <br /> The table represents the averages in  (degrees Celsius), windspeed (meters per second), and atmospheric pressure (Pascal) of the last seven Sol Days (length 24 hrs and 37 min) of the Martian Year (687 days).<br /> The satellite map indicates the current position of the probe. The radiobuttons let you select types of data, which are displayed in the graph below. In the graph the daily temperature, windspeed and atmospheric presure trends can be plotted (average, minimum, maximum values).<br /> <small>* InSight has temporarily suspended daily temperature measurements. As more data becomes available, it will appear. For more information <a href="https://mars.nasa.gov/news/8858/insight-is-meeting-the-challenge-of-winter-on-dusty-mars/?site=insight" style="color:#33ff33">click here</a> *</small></p>'
 
     return (
         <>
@@ -100,28 +102,30 @@ export default function MarsWeather() {
             </div>
             <div className="nasa-weather-description">
                 <div className="nasa-weather-text">
-                    <h2>WEATHER REPORT FROM ELYSIUM PLANITIA</h2>
-                    <p>The data from NASA's Mars InSight Mission is used here to give an updated report on the weather at Mars.
-                    Elysium Planitia is a flat and smooth plain close to Mars' equator. <br/> The table represents the averages in  (degrees Celsius),
-                    windspeed (meters per second), and atmospheric pressure (Pascal) of the last seven Sol Days (length 24 hrs and 37 min)
-                    of the Martian Year (687 days).<br/>                    
-                    The satellite map indicates the current position of the probe. The radiobuttons let you select types of data, which are displayed in the graph below.
-                    In the graph the daily temperature, windspeed and atmospheric presure trends can be plotted (average, minimum, maximum values).<br/>
-                    <span style={{fontSize: "8px", whiteSpace: "pre-line"}}>* InSight has temporarily suspended daily temperature measurements.
-                    As more data becomes available, it will appear. For more information <a href={"https://mars.nasa.gov/news/8858/insight-is-meeting-the-challenge-of-winter-on-dusty-mars/?site=insight"} 
-                    style={{color: "#33ff33"}}>click here</a> *</span>
-                    </p>
+                    <Typewriter
+                    options={{
+                        delay: 5
+                    }}
+                     onInit={(typewriter) => {
+                        typewriter.typeString(text)
+                        .pauseFor(200)
+                        .callFunction(() => {
+                            console.log("String typed out!");
+                        })                        
+                        .start();
+                    }}
+                    />           
                 </div>
-                
+
             </div>
             <div className="nasa-weather-graph-map">
-            <div className="nasa-weather-box-map" id='map'>
+                <div className="nasa-weather-box-map" id='map'>
                     <div>
                         <LeafletMap />
                     </div>
                 </div>
                 <Graph />
-            </div>       
+            </div>
         </>
     );
 }

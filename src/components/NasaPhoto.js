@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
+import Typewriter from "typewriter-effect";
 
 
 //API key NASA from .env file in root
@@ -24,17 +25,22 @@ export default function NasaPhoto() {
     }, []);
 
     if (!photoData) return <div />;
+    var title = photoData.title;
+    var date = photoData.date;
+    var explanation = photoData.explanation;
+
+    var text = '<h1>' + title + '</h1><p class="date">' + date + '</p><p class="explanation">' + explanation + '</p>'
 
     return (
         <>
-        <NavBar />
-        <div className="nasa-photo">
-            {photoData.media_type === "image" ? (
-                <img src={photoData.url}
-                    alt={photoData.title}
-                    className="photo"
-                />
-            ) : (
+            <NavBar />
+            <div className="nasa-photo">
+                {photoData.media_type === "image" ? (
+                    <img src={photoData.url}
+                        alt={photoData.title}
+                        className="photo"
+                    />
+                ) : (
                     <iframe title="space-video"
                         src={photoData.url}
                         frameBorder="0"
@@ -43,15 +49,27 @@ export default function NasaPhoto() {
                         allowFullScreen
                         className="photo"
                     />
-                   
+
                 )}
-            
-            <div>
-                <h1>{photoData.title}</h1>
-                <p className="date">{photoData.date}</p>
-                <p className="explanation">{photoData.explanation}</p>
+
+                <div>
+                    <div className="nasa-photo-text">
+                        <Typewriter
+                            options={{
+                                delay: 5
+                            }}
+                            onInit={(typewriter) => {
+                                typewriter.typeString(text)
+                                    .pauseFor(200)
+                                    .callFunction(() => {
+                                        console.log("String typed out!");
+                                    })
+                                    .start();
+                            }}
+                        />
+                    </div>
+                </div>
             </div>
-        </div>
         </>
     );
 }
